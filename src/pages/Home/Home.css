@@ -1,11 +1,12 @@
 .home {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
   color: #333;
   height: 100vh; /* Full viewport height */
   margin: 0;
   display: flex;
   flex-direction: column;
+  background: url('../../assets/benoni-country-club.jpg') no-repeat center center/cover;
 }
 
 .home-header {
@@ -25,24 +26,26 @@
 }
 
 .home-button {
-  background-color: #e4002b; /* Sunderland red */
+  background-color: #e4002b;
   color: white;
   font-size: 1.5rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
-  width: calc(33.333% - 20px); /* Make the buttons fill 1/3 of the row, with spacing */
-  height: calc(33.333% - 20px); /* Make the buttons square */
+  transition: transform 0.3s, background-color 0.3s;
+  width: calc(33.333% - 20px);
+  height: calc(33.333% - 20px);
 }
 
 .home-button:hover {
-  background-color: #b00022; /* Darker shade of Sunderland red for hover effect */
+  background-color: #b00022;
+  transform: scale(1.05); /* Slightly increase size on hover */
 }
 
 .home-button:active {
-  background-color: #800019; /* Even darker shade for active effect */
+  transform: scale(0.95); /* Shrink slightly when clicked */
 }
+
 
 @media (max-width: 768px) {
   .home-button {
