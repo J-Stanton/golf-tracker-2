@@ -1,0 +1,64 @@
+/* Navbar styling */
+.navbar {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Set font */
+    color: #fff; /* Text color */
+    display: flex;
+    justify-content: center; /* Center the title */
+    align-items: center; /* Center the content vertically */
+    height: 70px; /* Fixed height for the navbar */
+    margin: 0;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #e4002b, #d1001e); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    z-index: 10;
+    padding: 0 20px; /* Add horizontal padding */
+  }
+  
+  /* Home link styling */
+  .home-link {
+    position: absolute;
+    left: 20px; /* Align the Home link to the left */
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Retain hover effect */
+  }
+  
+  /* Hover effect for the Home link */
+  .home-link:hover {
+    background-color: #b00022; /* Darken red on hover */
+    color: white; /* Keep text color white */
+    transform: scale(1.1); /* Slightly grow the link */
+  }
+  
+  /* Title styling */
+  .navbar-header {
+    font-size: 2rem; /* Larger title font */
+    font-weight: bold;
+    color: white; /* Title color */
+    text-align: center; /* Center the title text */
+    margin: 0;
+    flex: 1; /* Make sure the title takes up available space */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Title shadow for emphasis */
+  }
+  
+  /* Responsive design for navbar */
+  @media (max-width: 768px) {
+    .navbar {
+      height: 60px; /* Adjust navbar height for smaller screens */
+    }
+  
+    .home-link {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+  
+    .navbar-header {
+      font-size: 1.5rem; /* Adjust title font size on smaller screens */
+    }
+  }
+  
