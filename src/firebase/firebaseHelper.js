@@ -12,3 +12,14 @@ export const getAllHandicapMembers = async () =>{
     }
 };
 
+export const getAllCompMembers = async () =>{
+    const dbRef = ref(db,'competitionMembers/');
+    const snapshot = await get(dbRef);
+    if (snapshot.exists()){
+        return snapshot.val();
+    }
+    else{
+        return {};
+    }
+};
+
