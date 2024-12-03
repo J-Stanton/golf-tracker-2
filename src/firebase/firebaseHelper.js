@@ -24,7 +24,11 @@ export const getAllCompMembers = async () =>{
 };
 
 export const saveHandicapScores = ({ scores, date }) => {
-    const formattedDate = date.toISOString().split("T")[0]; // Format date as YYYY-MM-DD
+    const formattedDate = date.toLocaleDateString("en-ZA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).replace(/\//g, "-");
   
     const updates = {};
     for (const [playerIndex, score] of Object.entries(scores)) {
@@ -42,6 +46,31 @@ export const saveHandicapScores = ({ scores, date }) => {
         console.error("Error saving scores:", error);
       });
 };
+
+export const saveCompetitionScores = ({ scores, date }) => {
+  const formattedDate = date.toLocaleDateString("en-ZA", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).replace(/\//g, "-");
+
+  const updates = {};
+  for (const [playerIndex, { score, putts }] of Object.entries(scores)) {
+    // Construct the path using nested keys
+    updates[`competitionScores/${playerIndex}/${formattedDate}`] = { score, putts };
+  }
+
+  // Update the database with the nested paths
+  const dbRef = ref(db);
+  update(dbRef, updates)
+    .then(() => {
+      console.log("Competition scores saved successfully");
+    })
+    .catch((error) => {
+      console.error("Error saving competition scores:", error);
+    });
+};
+
 
 export const getHandicapScores = async (memberId) =>{
   try {
