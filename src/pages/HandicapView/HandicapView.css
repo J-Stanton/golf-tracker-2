@@ -1,0 +1,74 @@
+.handicap-view {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .games-display {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 0px;
+    font-size: 20px;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    padding: 5px 5px;
+    margin-left: 10px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px; /* Adds some spacing between items */
+    font-size: 20px; /* Increases font size */
+  }
+  
+  .sidebar label {
+    cursor: pointer; /* Changes the cursor to a pointer for better UX */
+    font-weight: bold; /* Makes the font bolder (optional) */
+  }
+
+  .table-cell input {
+    border: none; /* Removes the border */
+    text-align: center; /* Centers the text inside the input */
+    width: 100%; /* Ensures the input spans the full width of the cell (optional) */
+    background: transparent; /* Makes the background transparent */
+  }
+  
+  .table-cell {
+    text-align: center; /* Centers content horizontally in the cell */
+    vertical-align: middle; /* Centers content vertically in the cell */
+    padding: 5px; /* Adds some padding for better spacing */
+  }
+  
+  .table-cell input:focus {
+    outline: none; /* Removes the blue outline when focused */
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
