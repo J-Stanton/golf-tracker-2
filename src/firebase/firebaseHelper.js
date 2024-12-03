@@ -98,3 +98,29 @@ export const updateHandicapScore = async (memberId, date, newScore) =>{
   const scoreRef = ref(db, `handicapScores/${memberId}/${date}`);
   await set(scoreRef, newScore);
 }
+
+
+export const getCompetitionScores = async (memberId) => {
+  const scoresRef = ref(db, `competitionScores/${memberId}`);
+  const snapshot = await get(scoresRef);
+  if (snapshot.exists()) {
+    return snapshot.val();
+  } else {
+    return [];
+  }
+};
+
+// Update competition score and putts for a member
+export const updateCompetitionScore = async (memberId, date, { score, putts }) => {
+  const updates = {};
+  updates[`competitionScores/${memberId}/${date}/score`] = score;
+  updates[`competitionScores/${memberId}/${date}/putts`] = putts;
+
+  const dbRef = ref(db);
+  try {
+    await update(dbRef, updates);
+    console.log("Competition scores updated successfully");
+  } catch (error) {
+    console.error("Error updating competition scores:", error);
+  }
+};
