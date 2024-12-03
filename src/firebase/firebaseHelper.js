@@ -23,3 +23,22 @@ export const getAllCompMembers = async () =>{
     }
 };
 
+export const saveHandicapScores = ({ scores, date }) => {
+    const formattedDate = date.toISOString().split("T")[0]; // Format date as YYYY-MM-DD
+  
+    const updates = {};
+    for (const [playerIndex, score] of Object.entries(scores)) {
+      // Construct the path using nested keys
+      updates[`handicapScores/${playerIndex}/${formattedDate}`] = score;
+    }
+  
+    // Update the database with the nested paths
+    const dbRef = ref(db);
+    update(dbRef, updates)
+      .then(() => {
+        console.log("Scores saved successfully");
+      })
+      .catch((error) => {
+        console.error("Error saving scores:", error);
+      });
+  };
