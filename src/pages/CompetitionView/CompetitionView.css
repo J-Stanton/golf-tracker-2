@@ -1,0 +1,84 @@
+.competition-view {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 30%;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .games-display {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Increased padding for readability */
+    font-size: 18px;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    padding: 5px 10px; /* Adjusted padding for better button appearance */
+  }
+  
+  .sidebar ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px; /* Adds some spacing between items */
+    font-size: 20px; /* Increases font size */
+  }
+  
+  .sidebar label {
+    cursor: pointer; /* Changes the cursor to a pointer for better UX */
+    font-weight: bold; /* Makes the font bolder (optional) */
+  }
+  
+  /* Add specific column width adjustments for 'score' and 'putts' */
+  .table-cell {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+  }
+  
+  .table-cell input {
+    border: none;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+  }
+  
+  .table-cell input:focus {
+    outline: none;
+  }
+  
+  /* Set smaller widths for 'score' and 'putts' columns */
+  table td:nth-child(2), table th:nth-child(2) {
+    width: 80px;  /* Smaller width for the score column */
+  }
+  
+  table td:nth-child(3), table th:nth-child(3) {
+    width: 80px;  /* Smaller width for the putts column */
+  }
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
