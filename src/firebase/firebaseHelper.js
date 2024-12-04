@@ -124,3 +124,31 @@ export const updateCompetitionScore = async (memberId, date, { score, putts }) =
     console.error("Error updating competition scores:", error);
   }
 };
+
+export const addHandicapMember = async (name) => {
+  try {
+    const membersRef = ref(db, "handicapMembers");
+    const snapshot = await get(membersRef);
+    const members = snapshot.exists() ? snapshot.val() : {};
+    const nextIndex = Object.keys(members).length; // Calculate next index
+
+    await set(ref(db, `handicapMembers/${nextIndex}`), { name });
+    console.log("Handicap member added successfully with index:", nextIndex);
+  } catch (error) {
+    console.error("Error adding handicap member: ", error);
+  }
+};
+
+export const addCompetitionMember = async (name) => {
+  try {
+    const membersRef = ref(db, "competitionMembers");
+    const snapshot = await get(membersRef);
+    const members = snapshot.exists() ? snapshot.val() : {};
+    const nextIndex = Object.keys(members).length; // Calculate next index
+
+    await set(ref(db, `competitionMembers/${nextIndex}`), { name });
+    console.log("Competition member added successfully with index:", nextIndex);
+  } catch (error) {
+    console.error("Error adding competition member: ", error);
+  }
+};
